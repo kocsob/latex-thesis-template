@@ -1,0 +1,36 @@
+%----------------------------------------------------------------------------
+\section{A dolgozat szerkezete és a forrásfájlok}
+%----------------------------------------------------------------------------
+A diplomatervsablon (a kari irányelvek szerint) az alábbi fő fejezetekből áll:
+\begin{enumerate}
+	\item 1 oldalas \emph{tájékoztató} a szakdolgozat/diplomaterv szerkezetéről (\verb+guideline.tex+), ami a végső dolgozatból törlendő,
+	\item \emph{feladatkiírás} (\verb+project.tex+), a dolgozat nyomtatott verzójában ennek a helyére kerül a tanszék által kiadott, a tanszékvezető által aláírt feladatkiírás, a dolgozat elektronikus verziójába pedig a feladatkiírás egyáltalán ne kerüljön bele, azt külön tölti fel a tanszék a diplomaterv-honlapra,
+	\item \emph{címoldal} (\verb+titlepage.tex+),
+	\item \emph{tartalomjegyzék} (\verb+diploma.tex+),
+	\item a diplomatervező \emph{nyilatkozat}a az önálló munkáról (\verb+declaration.tex+),
+	\item 1-2 oldalas tartalmi \emph{összefoglaló} magyarul és angolul, illetve elkészíthető még további nyelveken is (\verb+abstract.tex+),
+	\item \emph{bevezetés}: a feladat értelmezése, a tervezés célja, a feladat indokoltsága, a diplomaterv felépítésének rövid összefoglalása (\verb+introduction.tex+),
+	\item sorszámmal ellátott \emph{fejezetek}: a feladatkiírás pontosítása és részletes elemzése, előzmények (irodalomkutatás, hasonló alkotások), az ezekből levonható következtetések, a tervezés részletes leírása, a döntési lehetőségek értékelése és a választott megoldások indoklása, a megtervezett műszaki alkotás értékelése, kritikai elemzése, továbbfejlesztési lehetőségek (\verb+chapter{1,2..n}.tex+),
+	\item esetleges \emph{köszönetnyilvánítás}ok (\verb+acknowledgement.tex+),
+	\item részletes és pontos \emph{irodalomjegyzék} (ez a sablon esetében automatikusan generálódik a \verb+diploma.tex+ fájlban elhelyezett \verb+\bibliography+ utasítás hatására, a \sectref{HowtoReference}. fejezetben leírtak szerint),
+	\item \emph{függelékek} (\verb+appendices.tex+).
+\end{enumerate}
+
+A sablonban a fejezetek a \verb+diploma.tex+ fájlba vannak beillesztve \verb+\include+ utasítások segítségével. Lehetőség van arra, hogy csak az éppen szerkesztés alatt álló \verb+.tex+ fájlt fordítsuk le, ezzel lerövidítve a fordítási folyamatot. Ezt a lehetőséget az alábbi kódrészlet biztosítja a \verb+diploma.tex+ fájlban.
+\begin{lstlisting}[frame=single,float=!ht]
+\includeonly{
+	guideline,%
+	project,%
+	titlepage,%
+	declaration,%
+	abstract,%
+	introduction,%
+	chapter1,%
+	chapter2,%
+	chapter3,%
+	acknowledgement,%
+	appendices,%
+}
+\end{lstlisting}
+
+Ha az alábbi kódrészletben az egyes sorokat a \verb+%+ szimbólummal kikommentezzük, akkor a megfelelő \verb+.tex+ fájl nem fordul le. Az oldalszámok és a tartalomjegyék természetesen csak akkor billennek helyre, ha a teljes dokumentumot lefordítjuk.

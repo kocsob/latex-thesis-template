@@ -1,0 +1,28 @@
+%----------------------------------------------------------------------------
+\section{Felsorolások és listák}
+%----------------------------------------------------------------------------
+Számozatlan felsorolásra mutat példát a jelenlegi bekezdés:
+\begin{itemize}
+	\item \emph{első bajusz:} ide lehetne írni az első elem kifejését,
+	\item \emph{második bajusz:} ide lehetne írni a második elem kifejését,
+	\item \emph{ez meg egy szakáll:} ide lehetne írni a harmadik elem kifejését.
+\end{itemize}
+
+Számozott felsorolást is készíthetünk az alábbi módon:
+\begin{enumerate}
+	\item \emph{első bajusz:} ide lehetne írni az első elem kifejését, és ez a kifejtés így néz ki, ha több sorosra sikeredik,
+	\item \emph{második bajusz:} ide lehetne írni a második elem kifejését,
+	\item \emph{ez meg egy szakáll:} ide lehetne írni a harmadik elem kifejését.
+\end{enumerate}
+A felsorolásokban sorok végén vessző, az utolsó sor végén pedig pont a szokásos írásjel. Ez alól kivételt képezhet, ha az egyes elemek több teljes mondatot tartalmaznak.
+
+Listákban a dolgozat szövegétől elkülönítendő kódrészleteket, programsorokat, pszeudo-kódokat jeleníthetünk meg (\listref{Example}~lista). 
+\begin{lstlisting}[frame=single,float=!ht,caption=A fenti számozott felsorolás \LaTeX- forráskódja, label=listing:Example]
+\begin{enumerate}
+	\item \emph{első bajusz:} ide lehetne írni az első elem kifejését, 
+	és ez a kifejtés így néz ki, ha több sorosra sikeredik,
+	\item \emph{második bajusz:} ide lehetne írni a második elem kifejését,
+	\item \emph{ez meg egy szakáll:} ide lehetne írni a harmadik elem kifejését.
+\end{enumerate}
+\end{lstlisting}
+A lista keretét, háttérszínét, egész stílusát megválaszthatjuk. Ráadásul különféle programnyelveket és a nyelveken belül kulcsszavakat is definiálhatunk, ha szükséges. Erről bővebbet a \verb+listings+ csomag hivatalos leírásában találhatunk.
